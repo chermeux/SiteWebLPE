@@ -1,0 +1,89 @@
+{% extends "base.html" %}
+{% load static %}
+{% block titre %}
+    Accueil
+{% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/accueil.css' %}">
+        
+        
+{% endblock %}
+
+{% block content %}
+
+    <div class="presentation">
+      
+    
+        <article>
+            <h2 class="featurette-heading fw-normal lh-1">Bienvenue chez Les Partenariats d'Excellence !</h2>
+            <p>L’association Les Partenariats d’Excellence (LPE) est une association dont les actions sont menées par les étudiants de l’Institut-Mines Télécom Business School et de Telecom SudParis.
+              Notre association a pour objectif de favoriser l’égalité des chances en mettant en place chaque semaine, le jeudi plus précisément, deux séances de tutorat au collège Galilée, à Évry Courcouronnes (91). Elle participe aussi aux Cordées de la Réussite, en faisant diverses interventions sur l’orientation dans des lycées et collèges appartenant au Grand Paris Sud. <br><br><div class="text">Toutes ces actions nous permettent de lutter en faveur de l’égalité des chances et de leur donner les ressources possibles afin d’aider les collégiens et les lycéens à faire de grandes études.</div></p>
+        </article>
+        <!-- vidéos de présentation -->
+    </div>
+
+
+<!--carrousel d'images-->
+ <section class="h-25 z-index-n2">
+  <div id="myCarousel" class="carousel slide border h-25 z-index-n2" data-ride="carousel">
+   <!-- Indicators -->
+   <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+       <li data-target="#myCarousel" data-slide-to="3"></li>
+       <li data-target="#myCarousel" data-slide-to="4"></li>
+       <li data-target="#myCarousel" data-slide-to="5"></li>
+       <li data-target="#myCarousel" data-slide-to="6"></li>
+   </ol>
+
+   <div class="carousel-inner h-25">
+      <div class="carousel-item active h-25">
+         <img class="d-block w-100 h-25" src="{% static 'img/img-carrousels/GrandPlaceVEE.jpg' %}">
+      </div>
+      <div class="carousel-item h-25">
+         <img class="d-block w-100 h-25" src="{% static 'img/img-carrousels/VEEParlementGroupe.jpg' %}">
+      </div>
+      <div class="carousel-item h-25">
+         <img class="d-block w-100 h-25" src="{% static 'img/img-carrousels/tutorat.jpeg' %}">
+      </div>
+       <div class="carousel-item h-25">
+         <img class="d-block w-100 h-25" src="{% static 'img/img-carrousels/lyceeforum.JPG' %}">
+      </div>
+       <div class="carousel-item h-25">
+         <img class="d-block w-100 h-25" src="{% static 'img/img-carrousels/jnc.JPG' %}">
+      </div>
+       <div class="carousel-item h-25">
+         <img class="d-block w-100 h-25" src="{% static 'img/img-carrousels/gv4.jpg' %}">
+      </div>
+       <div class="carousel-item h-25">
+         <img class="d-block w-100 h-25" src="{% static 'img/img-carrousels/course.JPG' %}">
+      </div>
+   </div>
+   <!-- Controls -->
+   <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+     <span class="sr-only">Previous</span>
+   </a>
+   <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+     <span class="carousel-control-next-icon" aria-hidden="true"></span>
+     <span class="sr-only">Next</span>
+   </a>
+</div>
+</section>
+<section>
+
+
+    <div id="videoo">
+      <div>
+        <img src="{% static 'img/logo.png' %}" alt="logo lpe" width=40% />
+      </div>
+        <div class="video">
+       <iframe width="560" height="315" src="https://www.youtube.com/embed/l1uNNt6PoBo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    
+    </div>
+</section>
+
+{% endblock content %}

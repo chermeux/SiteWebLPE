@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+{% load static %}
+{% block head %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/sdl.css' %}">
+{% endblock %}
+
+
+{% block content %}
+
+<section id="hautDePage">
+  <br>
+    <h1>Semaine de l'Ouverture et de la Tolérance</h1>
+    <h4>Save the date : 28/11/2022 - 01/12/2022</h4>
+    <h4>Une semaine, un but : le partage</h4>
+  <br>
+</section>
+<section id="PresentationGenerale">
+                    <p class="first m-2 text-center">L’objectif de cette semaine est de prôner <strong>la tolérance, l’esprit de solidarité,</strong> mais cela passe par adapter le processus pédagogique à son public afin de mieux le sensibiliser.<br>De facto, chaque journée aura un thème différent, ainsi, les activités proposées sur le campus seront différentes <strong>chaque jour</strong> :
+                    </p>
+  <div class="separation"></div>
+      
+     <div class="Activite">
+       
+            
+            <div class="desc">
+              <h2 class="featurette-heading fw-normal lh-1">Lundi : <span class="text-muted">Discrimination</span></h2>
+              <p>L'homophobie, le sexisme et la transphobie se nourrissent de tous les stéréotypes et de toutes les normes sociales liées au sexe et à la sexualité. De nombreux élèves sont victimes de violences physiques et mentales à cause de leur orientation sexuelle ou même de leur sexe, selon le ministre de l’éducation : « l’école doit être en première ligne pour lutter contre ça et renverser la logique », c’est pour cela que nous développons un atelier pour sensibiliser les élèves.</p>
+            </div>
+       <div class="image">
+              <img src="{% static 'img/photo.png' %}" alt="image discrimination"/>
+            </div>
+          </div>
+  <div class="separation"></div>
+          <div class="Activite">
+            
+            <div class="image">
+              <img src="{% static 'img/jmec.png' %}" alt="image jmec"/>
+            </div>
+            <div class="desc">
+              <h2 class="featurette-heading fw-normal lh-1">Mardi : <span class="text-muted">Journée Mondiale de l’Égalité des Chances</span> </h2>
+              <p>Cette journée mondiale permet de faciliter la réussite académique et professionnelle des jeunes de milieux modestes et d’interpeller les décisionnaires des secteurs public et privé sur leur responsabilité en la matière. Mais avant tout, au sein d’un campus, cette journée est un événement permettant aux élèves d’être sensibilisés aux inégalités sociales.</p>
+            </div>
+          </div>
+   <div class="separation"></div>
+          <div class="Activite">
+           
+            
+            <div class="desc">
+              <h2 class="featurette-heading fw-normal lh-1">Mercredi : <span class="text-muted">Handicap</span> </h2>
+              <p>L’objectif principal de ces ateliers de sensibilisation au handicap est de comprendre que le handicap est synonyme de performance. La démarche de nos ateliers de sensibilisation au handicap s’appuie sur l’expérience pour vous mettre en situation de handicap. Ainsi, les rôles des participants sont inversés avec nos animateurs handicapés. Ces ateliers permettent aux participants de parler de handicap sans tabou.</p>
+            </div>
+            <div class="image">
+              <img src="{% static 'img/handicap.jpeg' %}" alt="image handicap"/>
+            </div>
+  </div>
+   <div class="separation"></div>
+            <div class="Activite">
+             
+            <div class="image">
+              <img src="{% static 'img/img-carrousels/gv4.jpg' %}" alt="image gv"/>
+            </div>
+            <div class="desc">
+              <h2 class="featurette-heading fw-normal lh-1">Jeudi : <span class="text-muted">Global Village</span></h2>
+              <p>Le Global Village est un événement où des étudiants du campus qui souhaitent partager leur culture, leur pays d’origine ou simplement une civilisation qu’ils apprécient, peuvent tenir un stand de nourriture sur la nation/région choisie afin de la faire découvrir aux autres étudiants du campus. Les étudiants peuvent aussi faire découvrir différentes cultures et pays à travers des animations, des décorations rattachées à des pays.</p>
+            </div>
+            
+          </div>
+        
+        
+        
+</section>
+{% endblock content %}

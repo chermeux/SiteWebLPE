@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% load static %}
+{% block head %}
+
+{% endblock %}
+
+
+{% block content %}
+    <h2>{{ groupe }}</h2>
+    <form action="/GestionEleves/newAppelle/" method="post">
+        {% csrf_token %}
+        <table>
+            <tr>
+                <th>Eleve</th>
+                {% for appelle in groupe.appelles %}
+                    <th>{{ appelle.date }}</th>
+                {% endfor %}
+                <th>Aujourd'hui</th>
+            </tr>
+            {% for eleve in groupe.eleves %}
+                <input type="hidden" value="{{ eleve.id }}" name="eleveId">
+                <tr>
+                    <td><label for="checkbox_{{ eleve.id }}">{{ eleve }}</label></td>
+                    {% for presence in eleve.presence %}
+                        <td style="background-color: {% if presence is None %}white{% elif presence %}greenyellow{% else %}orangered{% endif %}">
+                            {{ presence }}
+                        </td>
+                    {% endfor %}
+                    <td>
+                        <input type="checkbox" name="{{ eleve.id }}" id="checkbox_{{ eleve.id }}">
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>
+        <input type="hidden" value="{{ groupe.id }}" name="groupeId">
+        <input type="submit">
+    </form>
+    <form method="post">
+    {% csrf_token %}
+    <label for="delete">Pour supprimer écrivez "j_e v_e_u_x s_u_p_p_r_i_m_e_r c_e g_r_o_u_p_e" dans la case ci-dessous (sans les _)</label>
+    <input type="text" name="delete" id="delete">
+    <input type="submit">
+    </form>
+{% endblock content %}

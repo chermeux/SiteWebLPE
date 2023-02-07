@@ -1,0 +1,58 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
+
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
+#hautDePage {
+  background-color: #961A25;
+  font-size: 17px;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  color:  #FFFFFF;
+  text-align: center;
+  padding: 2%;
+}
+
+#hautDePage h1 {
+  text-transform: uppercase;
+}
+
+#hautDePage p {
+  font-size: 18px;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  text-align: center;
+}
+
+#PresentationDesInterventions {
+  background-image: url(https://www.enseignementsup-recherche.gouv.fr/sites/default/files/styles/full_width/public/2021-10/mesri-enseignement-sup-cordees-reussite-jpg-13733_0.jpg?itok=aSr6orq5);
+  background-repeat:no-repeat;
+  background-position: 50% 50%;
+  background-size: 100%;
+  height: 500px;
+}
+
+.text  {
+  text-align: justify;
+  margin-left: 60%;
+  padding: 2%;
+  font-size: 1.1vw;
+ 
+}
+  
+@media all and (max-width : 768px) {
+  
+  #PresentationDesInterventions {
+  background-image: url(https://www.enseignementsup-recherche.gouv.fr/sites/default/files/styles/full_width/public/2021-10/mesri-enseignement-sup-cordees-reussite-jpg-13733_0.jpg?itok=aSr6orq5);
+  background-repeat:no-repeat;
+  background-position: left top;
+  background-size: 100%;
+  display: flex;
+  flex-direction : column;
+  align-items: center;
+  height: 500px;
+}
+  
+  
+}

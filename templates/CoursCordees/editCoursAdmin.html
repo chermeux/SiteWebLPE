@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% load static %}
+{% block head %}
+    <!--<link rel="stylesheet" type="text/sass" href="{% static 'home/css/cours.sass' %}">-->
+
+
+{% endblock %}
+
+
+{% block content %}
+    <section>
+        <form enctype="multipart/form-data" class="modifCours" action="/CoursCordees/ad/cours/{{ cours.id }}{% if cours.id %}/{% endif %}" method="POST">
+            {% csrf_token %}
+            <table>
+                <tr><th><label for="{{ coursForm.matiere.id_for_label }}">{{ coursForm.matiere.label }}</label></th><td>{{ coursForm.matiere }}</td></tr>
+                <tr><th><label for="{{ coursForm.nom.id_for_label }}">{{ coursForm.nom.label }}</label></th><td>{{ coursForm.nom }}</td></tr>
+                <tr><th><label for="{{ coursForm.priorite.id_for_label }}">{{ coursForm.priorite.label }}</label></th><td>{{ coursForm.priorite }}</td></tr>
+                <tr><th><label for="{{ coursForm.public.id_for_label }}">{{ coursForm.public.label }}</label></th><td>{{ coursForm.public }}</td></tr>
+                <tr><th><label for="{{ coursForm.estCours.id_for_label }}">Cocher pour un cours decocher pour une orientation</label></th><td>{{ coursForm.estCours }}</td></tr>
+                <tr><th><label for="{{ coursForm.estActionCampus.id_for_label }}">Cocher pour une action du campus</label></th><td>{{ coursForm.estCours }}</td></tr>
+                <tr><th><label for="{{ coursForm.estActionLycee.id_for_label }}">Cocher pour une action du lycée</label></th><td>{{ coursForm.estCours }}</td></tr>
+                <tr><th><label for="{{ coursForm.estActionCollege.id_for_label }}">Cocher pour une action du collège</label></th><td>{{ coursForm.estCours }}</td></tr>
+                <tr><th><label for="{{ coursForm.desc.id_for_label }}">{{ coursForm.desc.label }}</label></th><td>{{ coursForm.desc }}</td></tr>
+                <tr><th><label for="{{ coursForm.img.id_for_label }}">{{ coursForm.img.label }}</label></th><td>{{ coursForm.img }}</td></tr>
+                <tr><th><label for="{{ coursForm.niveau.id_for_label }}">{{ coursForm.niveau.label }}</label></th><td>{{ coursForm.niveau }}</td></tr>
+                <tr><td colspan="2">{{ coursForm.text | safe }}</td></tr>
+                <tr><th>Ajouter Fichier</th><td>{{ fileForm.file_field }}</td></tr>
+                <tr><th>Fichiers</th><td>
+                    <ul>
+                        {% for file in cours.fichiers %}
+                            <li>
+                                <a href="{{ file.fichier.url }}">{{ file }}</a> - <a href="/CoursCordees/fichier/delete/{{ file.id }}" class="delete">délète ?</a>
+                            </li>
+
+                        {% endfor %}
+                    </ul>
+                </td></tr>
+                <tr><th>Supprimer le cours ?</th>
+                    <td>
+                        <label for="delete">Pour supprimer écrivez "j_e v_e_u_x s_u_p_p_r_i_m_e_r c_e c_o_u_r_s" dans la case ci-dessous (sans les _)</label>
+                        <input type="text" name="delete" id="delete">
+                    </td>
+                </tr>
+            </table>
+            <input type="submit">
+        </form>
+        <script src="./node_modules/ckeditor4/ckeditor.js"></script>
+    <script>
+        CKEDITOR.replace( '{{ coursForm.text.id_for_label }}' );
+    </script>
+    </section>
+{% endblock content %}

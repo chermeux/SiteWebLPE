@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+{% load static %}
+{% block head %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/cordees.css' %}">
+{% endblock %}
+
+
+{% block content %}
+
+<div id="hautDePage">
+    <h1>Les Cordées de la Réussite</h1>
+    <p>Une grande école, oui c'est possible!</p>
+</div>
+
+<section id="PresentationDesInterventions">
+  <div class="text">
+            <p><strong>Les Cordées de la réussite visent à faire de l'accompagnement à l'orientation un réel levier d'égalité des chances. Elles ont pour objectif de lutter contre l'autocensure et de susciter l'ambition scolaire des élèves par un continuum d'accompagnement de la classe de 4e au lycée et jusqu'à l'enseignement supérieur. La mobilisation de l’ensemble des acteurs, collèges, lycées, établissements d’enseignement supérieur et académies a permis la montée en charge du dispositif : en 2021-2022, 200 000 élèves (contre 80 000 en 2019) devraient bénéficier d’actions déployées dans le cadre de plus de 800 Cordées de la réussite dont nous faisons partis.<br>Chaque année nous accompagnons environ 100 élèves en tutorat  chaque semaine, nous réalisons de multiples sur l’orientation ce qui touche 500 élèves. Nous mettons en place quatre visites culturelles pour 200 élèves, un concours d’éloquence pour 100 collégiens etc.<br><br>Pour plus de renseignements, vous pouvez vous orienter vers le site internet des Cordées de la Réussite : </strong><a href="https://www.cordeesdelareussite.fr" style="color:blue;">Site Web</a></p>
+
+  </div>
+
+</section>
+
+<!--carrousel d'images-->
+ <section class="h-25">
+  <div id="myCarousel" class="carousel slide border h-25" data-ride="carousel">
+   <!-- Indicators -->
+   <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+       <li data-target="#myCarousel" data-slide-to="3"></li>
+       <li data-target="#myCarousel" data-slide-to="4"></li>
+       <li data-target="#myCarousel" data-slide-to="5"></li>
+       <li data-target="#myCarousel" data-slide-to="6"></li>
+   </ol>
+
+   <div class="carousel-inner h-25">
+      <div class="carousel-item active h-25">
+         <img class="d-block w-100 h-25" src="{% static 'img/img-carrousels/AtomiumGroupe.jpg' %}">
+      </div>
+      <div class="carousel-item h-25">
+         <img class="d-block w-100 h-25" src="{% static 'img/img-carrousels/retour.jpg' %}">
+      </div>
+      <div class="carousel-item h-25">
+         <img class="d-block w-100 h-25" src="{% static 'img/img-carrousels/tutorat.jpeg' %}">
+      </div>
+       <div class="carousel-item h-25">
+         <img class="d-block w-100 h-25" src="{% static 'img/img-carrousels/orientation.jpg' %}">
+      </div>
+       <div class="carousel-item h-25">
+         <img class="d-block w-100 h-25" src="{% static 'img/img-carrousels/orientation2.jpg' %}">
+      </div>
+       <div class="carousel-item h-25">
+         <img class="d-block w-100 h-25" src="{% static 'img/img-carrousels/parlement.jpg' %}">
+      </div>
+       <div class="carousel-item h-25">
+         <img class="d-block w-100 h-25" src="{% static 'img/img-carrousels/course.JPG' %}">
+      </div>
+   </div>
+   <!-- Controls -->
+   <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+     <span class="sr-only">Previous</span>
+   </a>
+   <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+     <span class="carousel-control-next-icon" aria-hidden="true"></span>
+     <span class="sr-only">Next</span>
+   </a>
+</div>
+</section>
+
+{% endblock content %}

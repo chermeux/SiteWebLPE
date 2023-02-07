@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load static %}
+{% block head %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/matieres.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/VignetteCours.css' %}">
+{% endblock %}
+
+{% block content %}
+
+  <div class="separation"></div>
+<section id="hautDePage">
+    
+    <h1>Nos aides à l'orientation</h1>
+    
+</section>
+{% for cour in cours %}
+    {% include 'Articles/vignetteCours.html'%}
+{% endfor %}
+{% if user.is_authenticated %}
+    <a href="/Articles/ad/cours/">Nouvel article</a>
+{% endif %}
+{% endblock content %}

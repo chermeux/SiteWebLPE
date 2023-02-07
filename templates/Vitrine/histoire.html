@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% load static %}
+{% block titre %}
+    Accueil
+{% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/histoire.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<section id="hautDePage">
+    <h1>Notre Histoire</h1>
+</section>
+<section id="Histoire">
+  <div class="left">
+            <h3 class="text"><strong>LPE est une des associations phare de Télécom SudParis (TSP) et Institut Mines Telecom Business School (IMT-BS).</strong></h3>
+  </div>
+  <div class="right">
+    <p>Notre association a d’abord été un club, créé en 2015. Ce club instaura le fameux tutorat hebdomadaire au College Galilée à Evry pour des élèves de troisième pendant plusieurs années. En 2021, le club Les Partenariats D’Excellence prit le statut d’association en s’élargissant aux différents collèges alentours : Collège Paul Eluard et Le Village ainsi que le lycée Georges Brassens aussi à Evry.<br>Nous avons donc développé notre activité en créant des interventions orientations, des sorties scolaires culturelles, des visites d’entreprise, etc…</p>
+  </div>
+</section>
+
+<section class="images m-5">
+<div class="first">
+      <img class="m-3 rounded mx-auto d-block img-thumbnail float-left" src="{% static 'img/ancienbureau2.jpg' %}" alt="image 1"/>
+     
+    </div>
+
+  
+  <div class="second">
+      <img class="m-3 rounded mx-auto d-block img-thumbnail float-right" src="{% static 'img/bureau.jpg' %}" alt="image 3"/>
+     
+    </div>
+  
+  <div class="third">
+      <img class="m-3 rounded mx-auto d-block img-thumbnail float-right" src="{% static 'img/bureau2020.png' %}" alt="image 4"/>
+     
+    </div>
+
+</section>
+
+
+
+   
+{% endblock content %}

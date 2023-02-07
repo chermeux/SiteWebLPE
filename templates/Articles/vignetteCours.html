@@ -1,0 +1,24 @@
+
+<a href="/Articles/cours/{{ cour.id }}/">
+        <div class="card">
+          <div class="card__image">
+            <img src="LIEN" alt="cours" />
+          </div>
+          <div class="card__level">{{ cour.matiere }}</div>
+          <div class="card__unit-name">{{ cour.nom }}</div>
+          
+
+          <div class="card__unit-stats card__unit-stats--barbarian clearfix">
+            {% for classe in cour.classes %}
+                                <div class="one-third">
+              <div class="stat">{{ classe.nom }}</div>
+              <div class="stat-value">Classe</div>
+            </div>
+            {% endfor %}
+            
+
+          </div>
+
+        </div>
+</a>
+
