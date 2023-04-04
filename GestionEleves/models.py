@@ -1,53 +1,74 @@
 from django.db import models
-# Create your models here.
 
+# Définition de la classe Groupe
 class Groupe(models.Model):
-	nom = models.CharField(max_length=50)
+    # Le nom du groupe, stocké dans un champ CharField
+    nom = models.CharField(max_length=50)
 
-	def __str__(self):
-		return self.nom
+    # Méthode appelée pour afficher le nom du groupe dans l'administration
+    def __str__(self):
+        return self.nom
 
-	@property
-	def eleves(self):
-		return self.eleve_set.all()
+    # Renvoie tous les élèves appartenant à ce groupe
+    @property
+    def eleves(self):
+        return self.eleve_set.all()
 
-	@property
-	def appelles(self):
-		return self.appelle_set.all()
+    # Renvoie tous les appels pour ce groupe
+    @property
+    def appelles(self):
+        return self.appelle_set.all()
 
+# Définition de la classe Eleve
 class Eleve(models.Model):
-	nom = models.CharField(max_length=50)
-	prenom = models.CharField(max_length=50)
-	groupe = models.ForeignKey(Groupe, on_delete=models.CASCADE)
+    # Le nom et le prénom de l'élève
+    nom = models.CharField(max_length=50)
+    prenom = models.CharField(max_length=50)
 
-	def __str__(self):
-		return f'{self.nom} {self.prenom} {self.groupe}'
+    # Le groupe auquel appartient l'élève, stocké dans une clé étrangère
+    groupe = models.ForeignKey(Groupe, on_delete=models.CASCADE)
 
-	@property
-	def status(self):
-		return self.status_set.all()
+    # Méthode appelée pour afficher le nom de l'élève dans l'administration
+    def __str__(self):
+        return f'{self.nom} {self.prenom} {self.groupe}'
 
-	@property
-	def presence(self):
-		appelles = self.groupe.appelles
-		l = []
-		for appelle in appelles:
-			try:
-				v = appelle.status_set.get(eleve_id=self.id).present
-			except:
-				v = None
-			l.append(v)
-		return l
+    # Renvoie tous les status de l'élève
+    @property
+    def status(self):
+        return self.status_set.all()
 
+    # Renvoie une liste indiquant si l'élève est présent ou non à chaque appel
+    @property
+    def presence(self):
+        appelles = self.groupe.appelles
+        l = []
+        for appelle in appelles:
+            try:
+                v = appelle.status_set.get(eleve_id=self.id).present
+            except:
+                v = False
+            l.append(v)
+        return l
+
+# Définition de la classe Appelle
 class Appelle(models.Model):
-	date = models.DateField(auto_now_add=True)
-	groupe = models.ForeignKey(Groupe, on_delete=models.CASCADE)
+    # La date de l'appel, stockée dans un champ DateField
+    date = models.DateField(auto_now_add=True)
 
-	def __str__(self):
-		return f'{self.date} {self.groupe}'
+    # Le groupe pour lequel l'appel est effectué, stocké dans une clé étrangère
+    groupe = models.ForeignKey(Groupe, on_delete=models.CASCADE)
 
+    # Méthode appelée pour afficher la date et le groupe dans l'administration
+    def __str__(self):
+        return f'{self.date} {self.groupe}'
 
+# Définition de la classe Status
 class Status(models.Model):
-	eleve = models.ForeignKey(Eleve, on_delete=models.CASCADE)
-	appelle = models.ForeignKey(Appelle, on_delete=models.CASCADE)
-	present = models.BooleanField()
+    # L'élève pour lequel le status est enregistré, stocké dans une clé étrangère
+    eleve = models.ForeignKey(Eleve, on_delete=models.CASCADE)
+
+    # L'appel pour lequel le status est enregistré, stocké dans une clé étrangère
+    appelle = models.ForeignKey(Appelle, on_delete=models.CASCADE)
+
+    # Indique si l'élève est présent ou non lors de l'appel
+    present = models.BooleanField()
