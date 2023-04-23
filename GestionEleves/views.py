@@ -52,7 +52,7 @@ def appelle(request, id):
 @login_required
 def groupe(request, id):
     if request.method == 'POST':
-        if request.POST['delete'] == 'je veux supprimer ce groupe':
+        if request.POST['delete'] == 'delete':
             Groupe.objects.get(id=id).delete()
             return redirect('/GestionEleves/liste/')
     return render(request, 'GestionEleves/groupe.html', getBase(request) | {'groupe': Groupe.objects.get(id=id)})
@@ -60,7 +60,7 @@ def groupe(request, id):
 @login_required
 def eleve(request, id):
     if request.method == 'POST':
-        if request.POST['delete'] == 'je veux supprimer cet élève':
+        if request.POST['delete'] == 'delete':
             Eleve.objects.get(id=id).delete()
             return redirect('/GestionEleves/liste/')
     return render(request, 'GestionEleves/eleve.html', getBase(request) | {'eleve': Eleve.objects.get(id=id)})
