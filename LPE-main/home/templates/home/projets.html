@@ -1,0 +1,48 @@
+{% extends "home/base.html" %}
+
+{% block content %}
+<script src="jquery.js" defer></script><!--Dans la partie header et télécharger jquery.js-->
+$('.to').click((e) => {
+$(e.target).find(".toh").toggleClass("on").toggleClass("off");
+});
+<!--mettre dans un autre fichier car la ça ne fonctionne pas-->
+<div>
+    <div class="to">
+        <img src="#" alt="logocalculatrice">
+        <p>Kit Lycée</p>
+        <div class="bulle"><p class="toh off">L'objectif est de founir 60 kit-lycée pour des collégiens d'evry issus de familles défavorisées. Le coût des fournitures ne devrait pas préoccuper les enfants. Ils doivent déjà penser à ce qu'ils veulent construire plus tard. Ainsi n'hésitez pas à nous aider en participant à notre cagnotte paypal</p></div>
+     </div>
+
+    <div class="to">
+        <img src="#" alt="logocalculatrice">
+        <p>Les Aunettes</p>
+        <div class="bulle"><p class="toh off" >Projet d'alphabétisation et de tutorat auprès de primaires et de collégiens</p></div>
+     </div>
+
+    <div class="to">
+        <img src="#" alt="logocalculatrice">
+        <p>Extension de LPE</p>
+        <div class="bulle"><p class="toh off" >L'égalité des chances est un pilier d'une bonne société, d'une bonne démocratie. Tous les enfants doivent avoir accès à ce droit. Ainsi, nous aidons tous ceux qui souhaitent créer leur LPE en france ou à l'étranger</p></div>
+     </div>
+</div>
+<div>
+    <div class="to">
+        <img src="#" alt="logocalculatrice">
+        <p>Semaine de l'ouverture et de la tolérance</p>
+        <div class="bulle"><p class="toh off">Nouveau grand projet de LPE, l'objectif est d'organiser une semaine à IMT-BS/TSP, aux collèges Galilée et Paul Eluard  qui promeut la solidarité, la bienveillance en réalisant de nombreux ateliers sur ces thèmes</p></div>
+     </div>
+
+    <div class="to">
+        <img src="#" alt="logocalculatrice">
+        <p>Visite d'une ville européenne</p>
+        <div class="bulle"><p class="toh off" >LPE a lancé un projet Gate mené par des TSP, l'objectif est d'emmener gratuitement une classe de 3ème découvrir une ville européenne et de préparer en amont tout un cursus pédagogique pour les élèves</p></div>
+     </div>
+
+    <div class="to">
+        <img src="#" alt="logocalculatrice">
+        <p>Projet "Lycée d'Excellence"</p>
+        <div class="bulle"><p class="toh off" >Ce projet s'incrit dans la nouvelle politique de LPE, à savoir permettre à chaque collégien de créer son programme des cordées adapté à ses objectifs. Ainsi, ce projet a pour objectif de donner confiance à des collégiens qui ont peur d'aller au lycée malgé leur excellent niveau et de les préparer déjà au rythme du lycée. Ainsi 10 collégiens vont toutes les deux semaines au Lycée....pour suivre différents modules</p></div>
+     </div>
+</div>
+
+{% endblock content %}

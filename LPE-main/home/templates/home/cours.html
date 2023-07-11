@@ -1,0 +1,39 @@
+{% extends "home/base.html" %}
+{% load static %}
+{% block head %}
+    <link rel="stylesheet" type="text/css" href="{% static 'home/css/cours.css' %}">
+    <script>
+      function resizeIframe(obj) {
+        obj.style.height = (obj.contentWindow.document.body.scrollHeight + 200) + 'px';
+      }
+    </script>
+{% endblock %}
+
+
+{% block content %}
+    <section>
+        {% if user.is_authenticated %}
+            <a href="/ad/cours/{{ cours.id }}">Modifier le cours</a>
+        {% endif %}
+        <iframe srcdoc='
+            <html>
+                <head>
+
+                </head>
+                <body>
+                    {{ cours.safetext | safe }}
+                </body>
+            </html>
+        ' width="100%" onload='resizeIframe(this)'>
+        </iframe>
+
+    </section>
+    <ul>
+        {% for file in cours.fichiers %}
+            <li>
+                <a href="{{ file.fichier.url }}">{{ file }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+
+{% endblock content %}

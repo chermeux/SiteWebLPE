@@ -1,0 +1,47 @@
+{% extends "home/base.html" %}
+{% load static %}
+{% block titre %}
+    Accueil
+{% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" type="text/css" href="{% static 'home/css/accueil.css' %}">
+{% endblock %}
+
+{% block content %}
+    <section>
+        <article>
+            <h2>Qui sommes-nous ?</h2>
+            <p>Elèves de TSP et d'IMT-BS nous accompagnons les jeunes Evryens. <br/> LPE est une association de deux écoles de l'INT qui promeut l'égalité des chances, la solidarité et le partage via du tutorat pour les jeunes Evryens, l'organisation des Cordées de la Réussite et de nombreux autres projets</p>
+        </article>
+        <article>
+            <h2>Les cordées de la Réussite</h2>
+            <p>Nous participons à l'organisation de ce dispositif national dans quatre établissements d'Evry. Il vise à favoriser l'accès à l'enseignement supérieur de jeunes quel que soit leur milieu socioculturel, en leur donnant les clefs pour s'engager avec succès dans les filières qu'ils souhaitent. En particulier celles d'Excellence.</p>
+        </article>
+    </section>
+    <aside>
+        <img src="{% static 'home/img/bus.png' %}" id="aside" width="100%">
+        <script type="application/javascript">
+            'use strict';
+            // Scripe en pleine page pour traiter dynamiquement les imgs
+            const listeImg = [
+                "{% static 'home/img/bus.png' %}",
+                "{% static 'home/img/logo.png' %}",
+                "{% static 'home/img/livres.png' %}",
+            ];
+            console.log('hey')
+            window.addEventListener('load', async e => {
+                console.log('hey')
+                const img = document.querySelector('img#aside');
+                while (true) {
+                    for (const url in listeImg) {
+                        console.log('hey')
+                        await new Promise(r => setTimeout(r, 3 * 1000)); // Sleep 3s en js
+                        img.setAttribute('src', listeImg[url]);
+                    }
+                }
+            })
+        </script>
+
+    </aside>
+{% endblock content %}

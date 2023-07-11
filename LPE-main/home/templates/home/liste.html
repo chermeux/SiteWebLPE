@@ -1,0 +1,54 @@
+{% extends "home/base.html" %}
+{% load static %}
+{% block head %}
+    <link rel="stylesheet" type="text/css" href="{% static 'home/css/liste.css' %}">
+{% endblock %}
+
+
+{% block content %}
+    <section id="eleve">
+        <form action="/newEleve/" method="post">
+            {% csrf_token %}
+            <h2>Nouveau élève</h2>
+            <table>
+                 {{ newEleveForm.as_table }}
+            </table>
+            <input type="submit" value="Crée">
+        </form>
+        <h2>Liste élève</h2>
+        <ul>
+            {% for eleve in eleves %}
+                <li><a href="/eleve/{{ eleve.id }}">{{ eleve }}</a></li>
+            {% endfor %}
+        </ul>
+    </section>
+    <section id="groupe">
+        <form action="/newGroupe/" method="post">
+            {% csrf_token %}
+            <h2>Nouveau Groupe</h2>
+            <table>
+                 {{ newGroupeForm.as_table }}
+            </table>
+            <input type="submit" value="Crée">
+        </form>
+        <h2>Liste groupe</h2>
+        <ul>
+            {% for groupe in groupes %}
+                <li><a href="/groupe/{{ groupe.id }}">{{ groupe }}</a></li>
+            {% endfor %}
+        </ul>
+    </section>
+    <section id="appelle">
+        <h2>Liste appelle</h2>
+        <ul>
+            {% for appelle in appelles %}
+                <li>{{ appelle }}</li>
+            {% endfor %}
+        </ul>
+    </section>
+    <section id="formulaire">
+        <form action="/getAppel/" method="get">
+            <input type="submit" value="En xls">
+        </form>
+    </section>
+{% endblock content %}

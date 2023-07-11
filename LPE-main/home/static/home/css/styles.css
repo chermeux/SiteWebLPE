@@ -1,0 +1,130 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css?family=Rochester");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  background-color: white;
+  background-image: url("/static/home/img/arrière plan.jpg");
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex-grow: 1;
+}
+
+.bandeau {
+  padding: 1em;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  height: 200px;
+}
+.bandeau h1 {
+  color: #6c0100;
+  font-size: 3em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.bandeau h1 .chapeau {
+  position: relative;
+}
+.bandeau h1 .chapeau img {
+  position: absolute;
+  top: calc(-1ex);
+  left: 0;
+  height: 100%;
+}
+
+nav, h1 {
+  font-family: Arial, serif;
+  word-spacing: 2px;
+}
+
+nav {
+  width: 100%;
+}
+nav > ul {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  align-content: center;
+  color: #fdf3ec;
+  text-decoration: none;
+  font-size: 24px;
+}
+nav > ul > li {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  list-style: none;
+  margin: unset;
+  border-top: solid 4px #6c0100;
+  border-bottom: solid 4px #6c0100;
+  border-right: solid 4px #6c0100;
+  width: 100%;
+  text-align: center;
+  background-color: #505a97;
+  position: relative;
+  z-index: 1;
+}
+nav > ul > li:last-child {
+  border-right: none;
+}
+nav > ul > li#nav-matieres .sous-liste {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  text-align: center;
+  width: 100%;
+}
+nav > ul > li#nav-matieres .sous-liste div {
+  height: 5em;
+  z-index: 0.5;
+}
+nav > ul > li#nav-matieres .sous-liste ul li {
+  background-color: #505a97;
+  padding: 1em;
+  list-style: none;
+  border-bottom: #6c0100 solid 4px;
+}
+nav > ul > li#nav-matieres .sous-liste ul li:hover {
+  background-color: #5b649a;
+}
+nav > ul > li#nav-matieres .sous-liste ul li:last-child {
+  border-bottom: none;
+}
+nav > ul > li#nav-matieres:hover .sous-liste {
+  display: block;
+}
+nav > ul > li:hover {
+  background-color: #5b649a;
+}
+nav > ul a {
+  color: inherit;
+  text-decoration: inherit;
+  z-index: 1;
+  padding: 1.2em;
+}
+
+.delete {
+  color: red;
+}
+
+table, th, td {
+  border: #625f62 solid 1px;
+  padding: 0.2em;
+}
+
+/*# sourceMappingURL=styles.css.map */

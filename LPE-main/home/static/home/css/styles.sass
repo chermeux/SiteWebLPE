@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css?family=Rochester')
+
+$navC: #505a97
+$navCH: #5b649a
+$navBorder: #6c0100
+
+*
+    margin: 0
+    padding: 0
+    box-sizing: border-box
+
+html
+    height: 100%
+
+body
+    background-color: white
+    background-image: url('/static/home/img/arrière plan.jpg')
+    height: 100%
+    display: flex
+    flex-direction: column
+main
+    flex-grow: 1
+// Bandeau
+.bandeau
+    padding: 1em
+    display: flex
+    flex-wrap: nowrap
+    justify-content: space-between
+    height: 200px
+    h1
+        color: $navBorder
+        font-size: 3em
+        display: flex
+        flex-direction: column
+        justify-content: center
+        .chapeau
+            position: relative
+            img
+                position: absolute
+                top: calc(-1ex)
+                left: 0
+                height: 100%
+nav, h1
+    font-family: Arial, serif
+    word-spacing: 2px
+
+nav
+    width: 100%
+
+    > ul
+        display: flex
+        justify-content: space-around
+        width: 100%
+        align-content: center
+        color: #fdf3ec
+        text-decoration: none
+        font-size: 24px
+        >
+            li
+                display: flex
+                flex-direction: column
+                justify-content: center
+                list-style: none
+                margin: unset
+                border-top: solid 4px $navBorder
+                border-bottom: solid 4px $navBorder
+                border-right: solid 4px $navBorder
+                width: 100%
+                text-align: center
+                background-color: $navC
+                position: relative
+                z-index: 1
+            li:last-child
+                border-right: none
+
+            li#nav-matieres
+                .sous-liste
+                    display: none
+                    position: absolute
+                    top: 0
+                    left: 0
+                    text-align: center
+                    width: 100%
+                    div
+                        height: 5em
+                        z-index: 0.5
+                    ul li
+                        background-color: $navC
+                        padding: 1em
+                        list-style: none
+                        border-bottom: $navBorder solid 4px
+                    ul li:hover
+                        background-color: $navCH
+                    ul li:last-child
+                        border-bottom: none
+
+            li#nav-matieres:hover
+                .sous-liste
+                    display: block
+
+            li:hover
+                background-color: $navCH
+
+        a
+            color: inherit
+            text-decoration: inherit
+            z-index: 1
+            padding: 1.2em
+
+.delete
+    color: red
+
+table, th, td
+    border: #625f62 solid 1px
+    padding: 0.2em

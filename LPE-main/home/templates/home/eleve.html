@@ -1,0 +1,28 @@
+{% extends "home/base.html" %}
+{% load static %}
+{% block head %}
+
+{% endblock %}
+
+
+{% block content %}
+    <h2>{{ eleve }}</h2>
+    <table>
+        {% for statu in eleve.status %}
+            <tr style="background-color: {% if statu.present %}greenyellow{% else %}orangered{% endif %}">
+                <th>
+                    {{ statu.appelle }}
+                </th>
+                <td>
+                    {{ statu.present }}
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+    <form method="post">
+    {% csrf_token %}
+    <label for="delete">Pour supprimer écrivez "j_e v_e_u_x s_u_p_p_r_i_m_e_r c_e_t é_l_è_v_e" dans la case ci-dessous (sans les _)</label>
+    <input type="text" name="delete" id="delete">
+    <input type="submit">
+    </form>
+{% endblock content %}

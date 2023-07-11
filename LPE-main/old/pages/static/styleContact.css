@@ -1,0 +1,24 @@
+/*****CSS Organisation articles******/
+
+#articleContactezNous
+{
+	display:flex;
+	flex-direction: row;
+}
+
+/******CSS pour le cadre contactez-nous !*******/
+
+#cadreContactezNous
+{
+    background: rgb(255,255,255);
+    width: 500px;
+    height: 350px;
+    color: rgb(177,94,91);
+}
+
+/******CSS réseaux sociaux*******/
+
+#reseaux
+{
+    color: rgb(108,104,108);
+}

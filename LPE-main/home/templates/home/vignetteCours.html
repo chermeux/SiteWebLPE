@@ -1,0 +1,18 @@
+<a href="/cours/{{ cour.id }}/">
+    <div class="vcours" {% if not cour.public %}style="opacity: 0.7"{% endif %}>
+        <div>
+            <div>
+                <h2>{{ cour.nom }}</h2>
+                <img src="{% if cour.img %}{{ cour.img.url }}{% endif %}">
+                <p>{{ cour.desc }}</p>
+            </div>
+            <p>
+                {% for classe in cour.classes %}
+                    {{ classe.nom }}
+                {% endfor %}
+            </p>
+        </div>
+
+    </div>
+</a>
+

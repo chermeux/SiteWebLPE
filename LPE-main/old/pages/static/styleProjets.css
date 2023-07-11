@@ -1,0 +1,18 @@
+/*****CSS Organisation articles******/
+
+#articleContactezNous
+{
+	display:flex;
+	flex-direction: row;
+}/**TODO adapter cela pour bien afficher les éléments**/
+/**TODO créer la class bulle**/
+
+/*****Afficher les bulles******/
+.off {
+  display: none;
+}
+
+.on {
+  display: inline;
+}
+
